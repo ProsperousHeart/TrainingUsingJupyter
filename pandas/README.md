@@ -1,6 +1,6 @@
-# NumPy Training Using Jupyter & Examples
+# Pandas Training Using Jupyter & Examples
 
-This repository will be the training documentation, "cheat sheets" & exercises for NumPy.
+This repository will be the training documentation, "cheat sheets" & exercises for pandas.
 
 I created these for myself, my students, and any projects I need to work in.
 
