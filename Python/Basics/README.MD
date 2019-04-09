@@ -4,10 +4,27 @@
 
 This entire section of my [TrainingUsingJupyter](https://github.com/ProsperousHeart/TrainingUsingJupyter) git repo is all about the basics of Python.
 
+## Table Of Contents
+
+1. [Introduction & Type Conversions](Python Basics 01 - Introduction And Type Conversions.ipynb)
+2. [Basic Statements]("Python Basics 02 - Basic Statements.ipynb")
+3. Variables & Garbage Collection
+4. Sequences
+5. Variable Type:  NUMBERS
+6. Variable Type:  STRING
+7. Variable Type:  LIST
+8. Variable Type:  TUPLE
+9. Variable Type:  DICTIONARY
+10. Type Conversions
+11. Functions
+12. Scope Of Variables
+13. Modules
+14. Input & Output
+15. Exceptions & Assertions
+
 ## What's Missing?
 
 This is not entirely complete. I am still working through the main details, but what is currently missing is:
-- how to install python
 - how to [setup your environment variables](https://github.com/ProsperousHeart/cheatsheets/blob/master/Processes/SetEnvVars.md)
 - how to [setup a virtual environment](https://github.com/ProsperousHeart/cheatsheets/blob/master/Tools/VirtualEnvironments.md) (process is [here](https://github.com/ProsperousHeart/cheatsheets/blob/master/Processes/virtualenvs.md))
 
