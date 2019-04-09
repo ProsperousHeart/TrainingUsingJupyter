@@ -1,4 +1,4 @@
-<a href='https://www.learntocodeonline.com/'>![alt text](../../IMGs/learn to code online.png></a>
+<a href='https://www.learntocodeonline.com/'>![alt text](../../IMGs/learn-to-code-online.png?raw=true "Learn To Code Online"></a>
 
 # Welcome!
 
