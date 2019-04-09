@@ -6,21 +6,21 @@ This entire section of my [TrainingUsingJupyter](https://github.com/ProsperousHe
 
 ## Table Of Contents
 
-1. [Introduction & Type Conversions](Python Basics 01 - Introduction And Type Conversions.ipynb)
-2. [Basic Statements]("Python Basics 02 - Basic Statements.ipynb")
-3. Variables & Garbage Collection
-4. Sequences
-5. Variable Type:  NUMBERS
-6. Variable Type:  STRING
-7. Variable Type:  LIST
-8. Variable Type:  TUPLE
-9. Variable Type:  DICTIONARY
-10. Type Conversions
-11. Functions
-12. Scope Of Variables
-13. Modules
-14. Input & Output
-15. Exceptions & Assertions
+1. [Introduction & Type Conversions](Python_Basics_01_-_Introduction_And_Type_Conversions.ipynb) - including installing Python
+2. [Basic Statements](Python_Basics_02_-_Basic_Statements.ipynb)
+3. [Variables & Garbage Collection](Python_Basics_03_-_Variables_&_Garbage_Collection.ipynb)
+4. [Sequences](Python_Basics_04_-_Sequences.ipynb)
+5. [Variable Type:  NUMBERS](Python_Basics_05_-_Variable_Type_NUMBERS.ipynb)
+6. [Variable Type:  STRING](Python_Basics_06_-_Variable_Type_STRING.ipynb)
+7. [Variable Type:  LIST](Python_Basics_07_-_Variable_Type_LIST.ipynb)
+8. [Variable Type:  TUPLE](Python_Basics_08_-_Variable_Type_TUPLE.ipynb)
+9. [Variable Type:  DICTIONARY](Python_Basics_09_-_Variable_Type_DICTIONARY.ipynb)
+10. [Type Conversions](Python_Basics_10_-_Type_Conversions.ipynb)
+11. [Functions](Python_Basics_11_-_Functions.ipynb)
+12. [Scope Of Variables](Python_Basics_12_-_Scope_Of_Variables.ipynb)
+13. [Modules](Python_Basics_13_-_Modules.ipynb)
+14. [Input & Output](Python_Basics_14_-_Input_&_Output.ipynb)
+15. [Exceptions & Assertions](Python_Basics_15_-_Exceptions_&_Assertions.ipynb)
 
 ## What's Missing?
 
