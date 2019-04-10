@@ -28,7 +28,7 @@ This is not entirely complete. I am still working through the main details, but 
 - how to [setup your environment variables](https://github.com/ProsperousHeart/cheatsheets/blob/master/Processes/SetEnvVars.md)
 - how to [setup a virtual environment](https://github.com/ProsperousHeart/cheatsheets/blob/master/Tools/VirtualEnvironments.md) (process is [here](https://github.com/ProsperousHeart/cheatsheets/blob/master/Processes/virtualenvs.md))
 
-At some point I will bring those pieces into this training, but for now I've at least provided links to my cheatsheets data for you.
+At some point I will bring those pieces into this training, but for now I've at least provided links to [my cheatsheets](https://github.com/ProsperousHeart/cheatsheets) data for you.
 
 # About Me
 
