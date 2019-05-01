@@ -1,4 +1,4 @@
-<a href='https://www.learntocodeonline.com/'>![Learn To Code Online By Clicking Here](..\IMGs\learn-to-code-online.png?raw=true "Learn To Code Online")</a>
+<a href='https://www.learntocodeonline.com/'><img src="https://github.com/ProsperousHeart/TrainingUsingJupyter/blob/master/IMGs/learn-to-code-online.png?raw=true"></img></a>
 
 # What Is JavaScript
 
