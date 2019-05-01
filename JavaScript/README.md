@@ -1,3 +1,5 @@
+<a href='https://www.learntocodeonline.com/'>![Learn To Code Online By Clicking Here](..\IMGs\learn-to-code-online.png?raw=true "Learn To Code Online")</a>
+
 # What Is JavaScript
 
 JavaScript is EVERYWHERE! ... Unless you never interact with the web. It's an essential part of modern interactions online. A driving force in evolution on the web and between interactive computer devices.
