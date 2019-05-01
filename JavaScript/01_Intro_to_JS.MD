@@ -1,3 +1,5 @@
+<a href='https://www.learntocodeonline.com/'>![Learn To Code Online By Clicking Here](..\IMGs\learn-to-code-online.png?raw=true "Learn To Code Online")</a>
+
 # Table Of Contents
 
 1. [Introduction to JavaScript](01_Intro_to_JS.MD) (_you are here_)
