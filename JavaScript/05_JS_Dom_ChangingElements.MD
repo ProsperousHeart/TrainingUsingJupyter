@@ -71,3 +71,106 @@ To get to a node, element, or group of nodes inside the body? You'll use methods
 - `document.getElementsByTagName("HTML tag")` returns collections or node lists of all related elements
 
 These are OK but can get clunky to work with. However [querySelector](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector) and [querySelectorAll()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll) have since come out. The "selectors" are one or more comma separated CSS selectors.
+
+## querySelector vs querySelectorAll
+
+### querySelector
+
+`document.querySelector(".masthead")` will return the document node **header** with the class `.masthead`
+
+You will use a `.` to signify _class_ and a `#` to signify an _id_. This is because it is a CSS selector and we are just opening it in a JS.
+
+`document` gives the entire document, where `querySelector` gives the first instance of any item that matches the request.
+
+### querySelectorAll
+
+If you want an element that is used several times, what do you use?
+
+Let's say you wanted all anchors of the entire document - then you would use:  `document.querySelectorAll("a")`
+
+This returns an HTML collection (node tree) with every single instance of the `a` element within the document & can sort through like a regular array.
+
+### Comparison
+
+`querySelector` will provide the first instance within the document.
+
+If you need any other instance (or a group of it) then `querySelectorAll` would be used.
+
+## Deeper Dive
+
+`document.querySelector(".menu .has-children a")"` gives us the first link inside of an element with the class `.has-children` inside the element with the class `.menu`.
+
+`document.querySelectorAll(".social-nav a[href*='linkedin.com']")` will give any linked pointing to LinkedIn inside the element with a class **social-nav**.  
+
+You can also make multiple selections as long as the requests are separated by a comma.
+`document.querySelectorAll(".menu li a, .social-nav li a")`
+
+For more on these functions, [check this out](https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors).
+
+For full rundown of these methods, [click here](https://developer.mozilla.org/en-US/docs/Web/API/document).
+
+# Accessing & Changing Elements
+
+The purpose of targeting an element within the DOM using JS is to do something with it. This could include but is not limited to:
+- change a class name
+- update ID
+- changes to the HTML as a whole
+
+Each of the elements is it's own DOM node (effectively an object) with a long list of properties & methods with which to interact with it. The [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) page gives a full breakdown of all available properties and methods for Elements. Including but not limited to:
+- tag name
+- attributes
+- inner HTML
+
+Will also provide information about the attributes of each element such as:
+- meta information
+- scroll top (number of pixels form top of document the element is placed)
+
+Most of these are read only but some crucial ones allow you to write directly to them.
+
+For example - you might have an element called `.main-title` and you want the text within it. You might run:  `document.querySelector(".main-title").innerHTML`
+
+If you wanted the whole code (including outer HTML) you would run:  `document.querySelector(".main-title").outerHTML`
+
+# Accessing & Changing Classes
+
+Read-only attributes generally have their own methods with which you can interact with them - such as [classList](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList).
+
+# Accessing & Changing Attributes
+
+Just like `classList` the `attributes` property is read-only and have teh additional complication of often appearing in attribute value pairs. (e.g.:  href always has a URL value)
+
+While you can access the attributes, you still need methods to interact with them.
+
+From [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element) documentation, here are the 4 methods to choose from:
+- `hasAttribute`
+- `getAttribute`
+- `setAttribute` (adds if none is present, otherwise changes the attribute)
+- `removeAttribute`
+
+Here is an example of what you might do to add to the link attribute of class `.cta`:
+
+```javascript
+const CTAELEMENT = document.querySelector(".cta a");
+
+if (CTAELEMENT.hasAttribute("target")) {
+    console.log(CTAELEMENT.getAttribute("target"))
+} else {
+    CTAELEMENT.setAttribute("target", "_blank")
+}
+
+console.log(CTAELEMENT.attributes)
+```
+
+Regardless of the attribute you are working with, this process is basically the same for confirming an attribute exists and for making a change.
+
+# Adding DOM Elements
+
+ADding new DOM elements can technically be done with a combination of inner and outer HTML properties, but they are crude tools for the job.
+
+Here is a better way to do it:
+1. create the element (as outlined [here](https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement))
+2. create the text node that goes inside the element (as outlined [here](https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode))
+3. add text node to the element
+4. add element to the DOM tree (as outlined [here](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild))
+
+This avoids breaking your document and unwanted changes.
