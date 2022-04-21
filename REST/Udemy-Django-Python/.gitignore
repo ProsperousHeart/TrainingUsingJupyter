@@ -1,19 +1,5 @@
 # Jupyter Notebook Checkpoints
-How-To/.ipynb_checkpoints
-Python/Recipes/.ipynb_checkpoints
-Python/Basics/.ipynb_checkpoints
-Python/Python-INTER/.ipynb_checkpoints/
-NumPy/.ipynb_checkpoints
-pandas/.ipynb_checkpoints
+.ipynb_checkpoints
 
 # Other Files & Folders
-TrainUp/
-pandas/Data Camp/
-Python/Basics/foo.txt
-Python/Basics/textfile
-Python/Basics/testfile
-How-To/files/
-JavaScript/Ex_Files_JavaScript_EssT/
-JavaScript/Ex_Files_JavaScript_EssT.zip
 .idea
-pandas/temp.txt
