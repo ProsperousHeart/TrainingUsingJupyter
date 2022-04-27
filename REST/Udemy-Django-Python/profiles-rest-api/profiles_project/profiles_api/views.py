@@ -3,8 +3,10 @@ from rest_framework.views import APIView
 # import Response class from rest_framework.response module
 from rest_framework.response import Response
 from rest_framework import status, viewsets
+# import Token Authentication
+from rest_framework.authentication import TokenAuthentication
 
-from profiles_api import serializers, models
+from profiles_api import serializers, models, permissions
 
 
 class HelloAPIView(APIView):
@@ -135,3 +137,10 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     # query the set which tells the ViewSet how to retrieve
     # the object from our DB
     queryset = models.UserProfile.objects.all() # this retrieves all of them
+
+    # add an authentication class variable below the query set variable
+    # ensure a comma is after it to ensure Python knows it's a tuple
+    authentication_classes = (TokenAuthentication,)
+
+    # define permission classes that will be applied
+    permission_classes = (permissions.UpdateUserProfile,)
