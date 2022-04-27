@@ -143,4 +143,4 @@ class UserProfileViewSet(viewsets.ModelViewSet):
     authentication_classes = (TokenAuthentication,)
 
     # define permission classes that will be applied
-    permission_classes = (permissions.UpdateUserProfile,)
+    permission_classes = (permissions.UpdateOwnProfile,)
