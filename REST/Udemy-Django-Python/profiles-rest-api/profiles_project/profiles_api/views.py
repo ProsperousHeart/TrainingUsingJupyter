@@ -2,10 +2,9 @@
 from rest_framework.views import APIView
 # import Response class from rest_framework.response module
 from rest_framework.response import Response
-from rest_framework import status
-from rest_framework import viewsets
+from rest_framework import status, viewsets
 
-from profiles_api import serializers
+from profiles_api import serializers, models
 
 
 class HelloAPIView(APIView):
@@ -122,3 +121,17 @@ class HelloViewSet(viewsets.ViewSet):
         """Handles removing an object."""
 
         return Response({'http_method': 'DELETE'})
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """Handles creating, reading and updating profiles."""
+    # ModelViewSet is a special ViewSet by the Django REST framework
+    # that takes care of all of the logic for CRU our model items
+
+    # define the serializer class - this serializer has the model
+    # in the metadata so it knows which model to look for
+    # to handle user objects
+    serializer_class = serializers.UserProfileSerializer
+
+    # query the set which tells the ViewSet how to retrieve
+    # the object from our DB
+    queryset = models.UserProfile.objects.all() # this retrieves all of them
