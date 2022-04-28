@@ -59,3 +59,20 @@ class UserProfileSerializer(serializers.ModelSerializer):
             instance.set_password(password)  # saves as hash
 
         return super().update(instance, validated_data)
+
+class ProfileFeedItemSerializer(serializers.ModelSerializer):
+    """Serializes profile feed items."""
+
+    # set model serializer to ProfileFeedItem class in models.py
+    class Meta:
+        model = models.ProfileFeedItem
+
+        # create fields based on the model
+        # Django always has an INT "id" & automatically RO
+        # since "created_on" is also autmatically created, it is RO
+        fields = ('id', 'user_profile', 'status_text', 'created_on')
+
+        # make user_profile the authenticated user
+        extra_kwargs = {
+            'user_profile': {'read_only': True}
+        }
