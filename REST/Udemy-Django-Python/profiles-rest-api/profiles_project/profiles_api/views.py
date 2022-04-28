@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from rest_framework import status, viewsets, filters
 # import Token Authentication
 from rest_framework.authentication import TokenAuthentication
+from rest_framework.authtoken.views import ObtainAuthToken
+from rest_framework.settings import api_settings
 
 from profiles_api import serializers, models, permissions
 
@@ -150,3 +152,10 @@ class UserProfileViewSet(viewsets.ModelViewSet):
 
     #fields to filter by
     search_fields = ('name', 'email')
+
+class UserLoginApiView(ObtainAuthToken):
+    """Handle creating user authentication tokens"""
+
+    # add renderer classes to ObtainAuthToken view
+    # enabled in the Django admin
+    renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
