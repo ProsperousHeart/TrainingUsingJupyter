@@ -159,3 +159,24 @@ class UserLoginApiView(ObtainAuthToken):
     # add renderer classes to ObtainAuthToken view
     # enabled in the Django admin
     renderer_classes = api_settings.DEFAULT_RENDERER_CLASSES
+
+class UserProfileFeedViewSet(viewsets.ModelViewSet):
+    """Handles creating, reading, & updating profile feed items."""
+
+    authentication_classes = (TokenAuthentication,)
+
+    # set serializer class to previously created serializer class
+    serializer_class = serializers.ProfileFeedItemSerializer
+
+    # assign query set, managed through our ViewSet
+    queryset = models.ProfileFeedItem.objects.all()
+
+    # set profile profile to RO based on authenticated user
+    # this allows you to override the behavior for creating objects through a Model ViewSet
+    # when new object is created, thsi will be called
+    def perform_create(self, serializer):
+        """Sets the user profile to the logged in user."""
+
+        # request is an object that gets passed into all ViewSets every time
+        # a request is made, containing all the details about the request
+        serializer.save(user_profile=self.request.user)
