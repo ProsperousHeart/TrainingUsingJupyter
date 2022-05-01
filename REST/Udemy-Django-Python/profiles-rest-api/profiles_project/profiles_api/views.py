@@ -7,7 +7,9 @@ from rest_framework import status, viewsets, filters
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
+# from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticated
 
 from profiles_api import serializers, models, permissions
 
@@ -174,7 +176,8 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
 
     permission_classes = (
         permissions.UpdateOwnStatus,
-        IsAuthenticatedOrReadOnly
+        # IsAuthenticatedOrReadOnly
+        IsAuthenticated
     )
 
     # set profile profile to RO based on authenticated user
