@@ -7,6 +7,7 @@ from rest_framework import status, viewsets, filters
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.settings import api_settings
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from profiles_api import serializers, models, permissions
 
@@ -170,6 +171,11 @@ class UserProfileFeedViewSet(viewsets.ModelViewSet):
 
     # assign query set, managed through our ViewSet
     queryset = models.ProfileFeedItem.objects.all()
+
+    permission_classes = (
+        permissions.UpdateOwnStatus,
+        IsAuthenticatedOrReadOnly
+    )
 
     # set profile profile to RO based on authenticated user
     # this allows you to override the behavior for creating objects through a Model ViewSet
