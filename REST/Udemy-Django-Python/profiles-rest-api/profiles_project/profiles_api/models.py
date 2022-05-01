@@ -3,6 +3,8 @@ from django.contrib.auth.models import AbstractBaseUser
 from django.contrib.auth.models import PermissionsMixin
 from django.contrib.auth.models import BaseUserManager
 
+# used to retrieve settings from settings.py file in project settings
+from django.conf import settings
 
 # create profile manager
 class UserProfileManager(BaseUserManager):
@@ -82,3 +84,30 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         Returns string representation of our user."""
 
         return self.email
+
+class ProfileFeedItem(models.Model):
+    """Profiles status update."""
+
+    # setting up a foreign key field it sets up a
+    # FK relationship in the DB to a remote model
+    # BENEFIT:  ensure integrity of the DB is maintained
+    user_profile = models.ForeignKey(
+        # 1st argument:  name of the model that is the remote model for the FK
+        # don't want to hard code - use the settings.py file
+        settings.AUTH_USER_MODEL,
+        # 2nd argument:  on delete - tells DB what to do if remove field is deleted
+        # if set to CASCADE, it cascades changes downt hrough related fields
+        on_delete=models.CASCADE
+    )
+
+    # contains text of feed update
+    status_text = models.CharField(max_length=255)
+
+    # every time new created, automatically add date/time stamp
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    # str representation of our model
+    # (what to do when convert model instance to a STR)
+    def __str__(self):
+        """Return the model as a string."""
+        return self._status_text

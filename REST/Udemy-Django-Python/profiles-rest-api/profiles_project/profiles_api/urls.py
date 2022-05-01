@@ -15,8 +15,12 @@ router.register('hello-viewset', views.HelloViewSet, base_name='hello-viewset')
 # register the user profile ViewSet
 router.register('profile', views.UserProfileViewSet)
 
+# register user profile feed ViewSet
+router.register('feed', views.UserProfileFeedViewSet)
+
 urlpatterns = [
     # url(r'^hello-view/', views.HelloAPIView.as_view()),
     path('hello-view/', views.HelloAPIView.as_view()),
+    path('login/', views.UserLoginApiView.as_view()),
     path('', include(router.urls))
 ]
